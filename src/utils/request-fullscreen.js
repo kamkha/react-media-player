@@ -6,6 +6,6 @@ export default (() => {
     'webkitRequestFullscreen'
   ]
   return names.reduce((prev, curr) =>
-    document.documentElement[curr] ? curr : prev
+    typeof document !== "undefined" && document.documentElement[curr] ? curr : prev
   )
 })()

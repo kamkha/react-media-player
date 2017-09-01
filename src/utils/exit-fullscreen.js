@@ -6,6 +6,6 @@ export default (() => {
     'webkitExitFullscreen'
   ]
   return names.reduce((prev, curr) =>
-    document[curr] ? curr : prev
+    typeof document !== "undefined" && document[curr] ? curr : prev
   )
 })()

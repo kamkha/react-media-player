@@ -6,6 +6,6 @@ export default function fullscreenChange(type, callback) {
     'webkitfullscreenchange'
   ]
   vendors.forEach(vendor =>
-    document[`${type}EventListener`](vendor, callback)
+    typeof document !== "undefined" && document[`${type}EventListener`](vendor, callback)
   )
 }

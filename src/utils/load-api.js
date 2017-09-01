@@ -1,5 +1,7 @@
 // load api asynchronously
 export default function loadAPI(url, cb) {
+  if (typeof document === "undefined") return;
+
   // create script to be injected
   const script = document.createElement('script')
 

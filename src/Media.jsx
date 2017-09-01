@@ -190,7 +190,7 @@ class Media extends Component {
     if (!this.state.isFullscreen) {
       this._player.node[requestFullscreen]()
     } else {
-      document[exitFullscreen]()
+      typeof document !== "undefined" && document[exitFullscreen]()
     }
   }
 
